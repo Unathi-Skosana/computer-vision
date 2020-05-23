@@ -13,4 +13,5 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+assets
 

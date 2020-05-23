@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{flatten}\PYG{p}{(}\PYG{n}{train\PYGZus{}labels}\PYG{p}{))}
+\end{Verbatim}
