@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Building labels and training data}
+    \PYG{n}{train\PYGZus{}data} \PYG{o}{=} \PYG{p}{[]}
+    \PYG{n}{train\PYGZus{}labels} \PYG{o}{=} \PYG{p}{[]}
+
+    \PYG{n}{classes} \PYG{o}{=} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Coast\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Forest\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Highway\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Kitchen\PYGZdq{}}\PYG{p}{,}\PYGZbs{}
+                    \PYG{l+s+s2}{\PYGZdq{}Mountain\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Office\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Store\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Street\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}Suburb\PYGZdq{}}\PYG{p}{]}
+
+    \PYG{k}{for} \PYG{n}{cl} \PYG{o+ow}{in} \PYG{n}{classes}\PYG{p}{:}
+      \PYG{n}{folder\PYGZus{}path} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}../assets/assignment\PYGZhy{}6/dataset/train\PYGZdq{}}\PYG{p}{,} \PYG{n}{cl}\PYG{p}{)}
+      \PYG{k}{for} \PYG{n}{fname} \PYG{o+ow}{in} \PYG{n}{os}\PYG{o}{.}\PYG{n}{listdir}\PYG{p}{(}\PYG{n}{folder\PYGZus{}path}\PYG{p}{):}
+        \PYG{n}{fpath} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{folder\PYGZus{}path}\PYG{p}{,} \PYG{n}{fname}\PYG{p}{)}
+        \PYG{n}{im} \PYG{o}{=} \PYG{n}{io}\PYG{o}{.}\PYG{n}{imread}\PYG{p}{(}\PYG{n}{fpath}\PYG{p}{)}
+        \PYG{n}{im\PYGZus{}resized} \PYG{o}{=} \PYG{n}{transform}\PYG{o}{.}\PYG{n}{resize}\PYG{p}{(}\PYG{n}{im}\PYG{p}{,} \PYG{p}{(}\PYG{l+m+mi}{224}\PYG{p}{,} \PYG{l+m+mi}{224}\PYG{p}{)} \PYG{p}{,} \PYG{n}{anti\PYGZus{}aliasing}\PYG{o}{=}\PYG{k+kc}{True}\PYG{p}{)}
+        \PYG{n}{im\PYGZus{}arr} \PYG{o}{=} \PYG{n}{img\PYGZus{}to\PYGZus{}array}\PYG{p}{(}\PYG{n}{im\PYGZus{}resized}\PYG{p}{)}
+        \PYG{n}{train\PYGZus{}data}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{im\PYGZus{}arr}\PYG{p}{)}
+        \PYG{n}{train\PYGZus{}labels}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{classes}\PYG{o}{.}\PYG{n}{index}\PYG{p}{(}\PYG{n}{cl}\PYG{p}{))}
+
+    \PYG{n}{train\PYGZus{}data} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{train\PYGZus{}data}\PYG{p}{)}
+    \PYG{n}{train\PYGZus{}labels} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{array}\PYG{p}{(}\PYG{n}{train\PYGZus{}labels}\PYG{p}{)}
+\end{Verbatim}
