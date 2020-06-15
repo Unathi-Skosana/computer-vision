@@ -45,3 +45,4 @@ check:
 clean:
 	# Clean latex garbage
 	rm -rf *.aux *.bbl *.blg *.log *.nav *.out *.snm *.toc *.synctex* *.xdv *.fdb_latexmk *.fls $(TARGET).pdf content/*.aux
+	rm -rf ./_minted-$(TARGET)

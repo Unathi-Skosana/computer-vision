@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-    \PYG{n}{clf}\PYG{o}{.}\PYG{n}{fit}\PYG{p}{(}\PYG{n}{flatten}\PYG{p}{(}\PYG{n}{train\PYGZus{}bow\PYGZus{}hist}\PYG{p}{),} \PYG{n}{flatten}\PYG{p}{(}\PYG{n}{train\PYGZus{}labels}\PYG{p}{))}
-\end{Verbatim}
